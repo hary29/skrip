@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	function __construct(){
+		parent::__construct();		
+		$this->load->library('session');
+
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -21,14 +26,11 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-		/*$this->load->view('layout/front/header');
+		$this->load->view('layout/front/header');
 		$this->load->view('front/home');
 		$this->load->view('layout/front/footer');
-*/
-		$this->load->view('layout/back/header');
-		$this->load->view('layout/back/sidebar');
-		$this->load->view('back/homeback');
-		$this->load->view('layout/back/footer');
 	}
+
+	
 	
 }

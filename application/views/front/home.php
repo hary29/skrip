@@ -1,4 +1,22 @@
-
+      <script>
+          $("span.menu-info").click(function(){
+            $("ul.cl-effect-21").slideToggle("slow" , function(){
+            });
+          });
+          </script>
+          <!-- /script-nav -->
+                    <div class="clearfix"> </div> 
+       </div>
+  </div>
+<div class="header-banner">
+   <div class="slider">
+      <ul class="rslides" id="slider2">
+        <li><a href="#"><img src="<?php echo base_url() ?>asset/front/images/4.jpg" class="img-responsive" alt=""/></a></li>
+        <li><a href="#"><img src="<?php echo base_url() ?>asset/front/images/2.jpg" class="img-responsive" alt=""/></a></li>
+        <li><a href="#"><img src="<?php echo base_url() ?>asset/front/images/3.jpg" class="img-responsive" alt=""/></a></li>
+      </ul>
+    </div>
+</div>
 <!--doctor-self-->
 <div class="doctor-self">
 	<div class="container">
@@ -6,7 +24,7 @@
 			<h3>WHAT WOULD OUR DEAN SAYS</h3>
 			<div class="doctor-self-info-bottom">
 				<div class="col-md-4 doctor-self-left">
-					<img src="images/5.jpg" class="img-responsive" alt=""/>
+					<img src="<?php echo base_url() ?>front/images/5.jpg" class="img-responsive" alt=""/>
 					<h4>DR.JIMMY</h4>
 					<h5>lorem lipsum doolr in groem horntim</h5>
 				</div>
@@ -33,7 +51,7 @@
 		<div class="dogs-food-top-info">
 		<div class="dogs-food-top">
 			<div class="col-md-4 dogs-food-info">
-				<img src="images/dg-1.png">
+				<img src="<?php echo base_url() ?>asset/front/images/dg-1.png">
 				<h4>CARE</h4>
 				<p>when an unknown printer took a galley of
 					 type and scrambled it to make a type speci
@@ -41,7 +59,7 @@
 					 <a class="dogs-top-food" href="#">More</a>
 			</div>
 			<div class="col-md-4 dogs-food-info">
-				<img src="images/dg-2.png">
+				<img src="<?php echo base_url() ?>asset/front/images/dg-2.png">
 				<h4>CARE-+</h4>
 				<p>when an unknown printer took a galley of
 					 type and scrambled it to make a type speci
@@ -49,7 +67,7 @@
 					<a class="dogs-top-food" href="#">More</a>
 			</div>
 			<div class="col-md-4 dogs-food-info">
-				<img src="images/dg-3.png">
+				<img src="<?php echo base_url() ?>asset/front/images/dg-3.png">
 				<h4>TRAVEL</h4>
 				<p>when an unknown printer took a galley of
 					 type and scrambled it to make a type speci
@@ -57,7 +75,7 @@
 					<a class="dogs-top-food" href="#">More</a>
 			</div>
 			<div class="col-md-4 dogs-food-info">
-				<img src="images/dg-4.png">
+				<img src="<?php echo base_url() ?>asset/front/images/dg-4.png">
 				<h4>FRIEND-SHIP</h4>
 				<p>when an unknown printer took a galley of
 					 type and scrambled it to make a type speci
@@ -65,7 +83,7 @@
 					<a class="dogs-top-food" href="#">More</a>
 			</div>
 				<div class="col-md-4 dogs-food-info">
-					<img src="images/dg-5.png">
+					<img src="<?php echo base_url() ?>asset/front/images/dg-5.png">
 					<h4>DOG-HOME</h4>
 					<p>when an unknown printer took a galley of
 						 type and scrambled it to make a type speci
@@ -73,7 +91,7 @@
 						<a class="dogs-top-food" href="#">More</a>
 				</div>
 				<div class="col-md-4 dogs-food-info">
-					<img src="images/dg-6.png">
+					<img src="<?php echo base_url() ?>asset/front/images/dg-6.png">
 					<h4>DOG-FOOD</h4>
 					<p>when an unknown printer took a galley of
 						 type and scrambled it to make a type speci
@@ -114,13 +132,13 @@
 						pe and scrambled</p>
 			</div>
 			<div class="col-md-2 support-info-left-top">
-				<img src="images/support.png" class="img-responsive" alt=""/>
+				<img src="<?php echo base_url() ?>asset/front/images/support.png" class="img-responsive" alt=""/>
 			</div>	
 			<div class="clearfix"> </div>
 			</div>
 			<div class="support-info-right">
 			<div class="col-md-2 support-info-right-bottom">
-				<img src="images/support.png" class="img-responsive" alt=""/>
+				<img src="<?php echo base_url() ?>asset/front/images/support.png" class="img-responsive" alt=""/>
 			</div>	
 			<div class="col-md-10 support-info-right-top">
 				<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
@@ -133,12 +151,10 @@
 		</div>
 	</div>
 </div>
-	<div class="home-map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387157.48595911684!2d-73.97968099999999!3d40.703312100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1421997628895"frameborder="0" style="border:0"></iframe>
-	</div>
+	
 <!--/support-->
 <!--contact-->
-<div class="contact">
+<!-- <div class="contact">
 	<div class="container">
 		<div class="contact-info">
 			<h4>CONTACT-US</h4>
@@ -153,7 +169,7 @@
 					</form>
 
 	</div>
-</div>
+</div> -->
 <!--/contact-->
 
 </body>
