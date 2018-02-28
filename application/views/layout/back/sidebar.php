@@ -124,7 +124,12 @@ if($level==1){?>
                     </li>
                     <li class="nav-small-cap m-t-10">--- Main Menu</li>
                     <li> <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
-                      <li> <a href="<?php echo base_url() ?>back/register" class="waves-effect"><i class=" ti-comments-smiley p-r-10"></i> <span class="hide-menu"> Register Anjing</span></a> </li>
+                   <li> <a href="" class="waves-effect"><i class=" ti-comments-smiley p-r-10"></i> <span class="hide-menu"> Register <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <!-- <li> <a href="<?php echo base_url() ?>back/register/register_user">Register User</a> </li> -->
+                            <li> <a href="<?php echo base_url() ?>back/register">Register Anjing</a> </li>
+                        </ul>
+                    </li>
                     <li> <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><i class="icon-note p-r-10"></i><span class="hide-menu">Pemeriksaan<span class="label label-rouded label-danger pull-right"></span></span></a>
                         <!-- <ul class="nav nav-second-level">
                             <li> <a href="inbox.html">Inbox</a></li>
