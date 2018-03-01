@@ -14,12 +14,12 @@ if($level==1){?>
                         <?php $user=$this->session->userdata('username');?>
                     </li>
                     <li class="user-pro">
-                        <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><img src="<?php echo base_url() ?>asset/back/plugins/images/users/d1.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"><?php echo $user ?><span class="fa arrow"></span></span>
+                        <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><img src="<?php echo base_url() ?>asset/back/plugins/images/users/user.png" alt="user-img" class="img-circle"> <span class="hide-menu"><?php echo $user ?><span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="<?php echo base_url() ?>back/user"><i class="ti-user"></i> My Profile</a></li>
                           <!--   <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li> -->
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="<?php echo base_url() ?>back/user/edit"><i class="ti-settings"></i> Account Setting</a></li>
                             <li><a href="<?php echo base_url() ?>front/Log/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -47,10 +47,10 @@ if($level==1){?>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> User <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="doctors.html">Semua user</a> </li>
-                            <li> <a href="add-doctor.html">Tambah user</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/user/semua_user">Semua user</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/register/register_user">Tambah user</a> </li>
                             <!-- <li> <a href="edit-doctor.html">Edit user</a> </li> -->
-                            <li> <a href="doctor-profile.html">User Profile</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/user">User Profile</a> </li>
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-comments-smiley p-r-10"></i> <span class="hide-menu"> Anjing <span class="fa arrow"></span></span></a>
@@ -113,12 +113,12 @@ if($level==1){?>
                         <?php $user=$this->session->userdata('username');?>
                     </li>
                     <li class="user-pro">
-                        <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><img src="<?php echo base_url() ?>asset/back/plugins/images/users/d1.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"><?php echo $user ?><span class="fa arrow"></span></span>
+                        <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><img src="<?php echo base_url() ?>asset/back/plugins/images/users/user.png" alt="user-img" class="img-circle"> <span class="hide-menu"><?php echo $user ?><span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="<?php echo base_url() ?>back/user"><i class="ti-user"></i> My Profile</a></li>
                           <!--   <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li> -->
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="<?php echo base_url() ?>back/user/edit"><i class="ti-settings"></i> Account Setting</a></li>
                             <li><a href="<?php echo base_url() ?>front/Log/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -149,7 +149,7 @@ if($level==1){?>
                            <!--  <li> <a href="doctors.html">Semua user</a> </li>
                             <li> <a href="add-doctor.html">Tambah user</a> </li> -->
                             <!-- <li> <a href="edit-doctor.html">Edit user</a> </li> -->
-                            <li> <a href="doctor-profile.html">User Profile</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/user">User Profile</a> </li>
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-comments-smiley p-r-10"></i> <span class="hide-menu"> Anjing <span class="fa arrow"></span></span></a>

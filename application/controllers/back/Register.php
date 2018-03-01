@@ -123,7 +123,7 @@ class Register extends CI_Controller {
 			$data_cari = array(
 			'username' => $this->input->post('username'),
 			);
-		$cek = $this->M_user->get_cari_username($data_cari);
+		$cek = $this->M_user->get_cari_username1($data_cari);
 if ($cek > 0){
 			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"><strong>error!</strong><br></i> Registrasi Gagal, username anda sudah ada</div>");
 	redirect('back/register/register_user');

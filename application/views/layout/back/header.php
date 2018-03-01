@@ -54,11 +54,11 @@
           </a>
                     <!-- /.dropdown -->
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="<?php echo base_url() ?>asset/back/plugins/images/users/d1.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $user ?></b> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="<?php echo base_url() ?>asset/back/plugins/images/users/user.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $user ?></b> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="<?php echo base_url() ?>back/user"><i class="ti-user"></i> My Profile</a></li>
                           <!--   <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li> -->
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="<?php echo base_url() ?>back/user/edit"><i class="ti-settings"></i> Account Setting</a></li>
                             <li><a href="<?php echo base_url() ?>front/Log/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                         <!-- /.dropdown-user -->

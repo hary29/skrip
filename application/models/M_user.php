@@ -115,30 +115,15 @@ class M_user extends CI_Model {
 	}
 	public function get_cari_username($data_cari) {
     $this->db->select('*');
+    $this->db->where('username', $data_cari);
+    $query = $this->db->get('tb_user'); 
+    	return $query->result_array();
+	}
+	public function get_cari_username1($data_cari) {
+    $this->db->select('*');
     $this->db->where('username', $data_cari['username']);
     $query = $this->db->get('tb_user'); 
-    	return $query->num_rows();
-	}
-	public function cari_rm($rm)
-	{
-	$this->db->where('kode_pendaftaran', $rm);
-    $query = $this->db->get('tb_user'); 
-    	return $query->num_rows();
-	}
-	public function get_rm($rm)
-	{
-		//print_r($rm);exit;
-	$this->db->where('kode_pendaftaran', $rm);
-    $query = $this->db->get('tb_user'); 
-    	return $query->result_array();
-	}
-	public function get_rm1($id)
-	{
-		//print_r($rm);exit;
-	//$this->db->select('kode_pendaftaran')
-	$this->db->where('id_user', $id);
-    $query = $this->db->get('tb_user'); 
-    	return $query->result_array();
+    	return $query->result();
 	}
 	public function get_user()
 	{
