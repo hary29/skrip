@@ -40,7 +40,7 @@ if($level==1){?>
                     <li class="nav-small-cap m-t-10">--- Manage</li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar p-r-10"></i> <span class="hide-menu"> Metode <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="doctor-schedule.html">Batasan bayes</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/bayes">Batasan bayes</a> </li>
                             <!-- <li> <a href="book-appointment.html">Book Appointment</a> </li> -->
                         </ul>
                     </li>
@@ -60,18 +60,25 @@ if($level==1){?>
                             <li> <a href="patient-profile.html">Patient Profile</a> </li> -->
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Penyakit <span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-pulse p-r-10"></i> <span class="hide-menu"> Penyakit <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="patients.html">Semua Penyakit</a> </li>
-                            <li> <a href="add-patient.html">Tambah Penyakit</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/penyakit">Semua Penyakit</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/penyakit/tambah">Tambah Penyakit</a> </li>
                             <!-- <li> <a href="edit-patient.html">Edit Patient</a> </li>
                             <li> <a href="patient-profile.html">Patient Profile</a> </li> -->
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Gejala <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="payment-report.html">semua Gejala</a></li>
-                            <li> <a href="income-report.html">Tambah Gejala</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/gejala">semua Gejala</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/gejala/tambah">Tambah Gejala</a></li>
+                            <!-- <li> <a href="sales-report.html">Sales Report</a></li> -->
+                        </ul>
+                    </li>
+                     <li> <a href="javascript:void(0);" class="waves-effect"><i class=" ti-shopping-cart-full p-r-10"></i> <span class="hide-menu"> Bobot <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="<?php echo base_url() ?>back/bobot">Semua Bobot</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/bobot/tambah">Tambah Gejala</a></li>
                             <!-- <li> <a href="sales-report.html">Sales Report</a></li> -->
                         </ul>
                     </li>
@@ -159,9 +166,9 @@ if($level==1){?>
                             <li> <a href="patient-profile.html">Patient Profile</a> </li> -->
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Penyakit <span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-pulse p-r-10"></i> <span class="hide-menu"> Penyakit <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="patients.html">Semua Penyakit</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/penyakit">Semua Penyakit</a> </li>
                             <!-- <li> <a href="add-patient.html">Tambah Penyakit</a> </li> -->
                             <!-- <li> <a href="edit-patient.html">Edit Patient</a> </li>
                             <li> <a href="patient-profile.html">Patient Profile</a> </li> -->
@@ -169,7 +176,7 @@ if($level==1){?>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Gejala <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="payment-report.html">semua Gejala</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/gejala">semua Gejala</a></li>
                             <!-- <li> <a href="income-report.html">Tambah Gejala</a></li> -->
                             <!-- <li> <a href="sales-report.html">Sales Report</a></li> -->
                         </ul>

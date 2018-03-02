@@ -47,12 +47,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="logo">
         <a href="index.html"><img src="<?php echo base_url() ?>asset/front/images/logo.png" alt="" /></a>
     </div>
-               <div class="search-box">
+              <!--  <div class="search-box">
                 <form>
                     <input type="text" name="s" class="textbox" placeholder="Search" required="">
                     <input type="submit" value="">
                 </form>
-             </div>
+             </div> -->
              <div class="clearfix"> </div>
     </div>
   </div>

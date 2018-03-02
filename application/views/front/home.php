@@ -9,6 +9,12 @@
        </div>
   </div>
 <div class="header-banner">
+	<?php 
+  if ($this->session->flashdata('sukses')) {
+    echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
+  }
+  echo validation_errors('<p class="warning" style="margin: 10px 20px;">','</p>');
+   ?>
    <div class="slider">
       <ul class="rslides" id="slider2">
         <li><a href="#"><img src="<?php echo base_url() ?>asset/front/images/4.jpg" class="img-responsive" alt=""/></a></li>
@@ -108,7 +114,7 @@
 <!--daily-updates-->
 <div class="daily-updates">
 	<div class="container">
-		<div class="daily-updates-info">
+		<!-- <div class="daily-updates-info">
 		<h4>SUBSCRIBE FOR DAILY UPDATES</h4>
 		<form>
 			
@@ -116,12 +122,12 @@
 					 <input type="submit"value="SUBMIT">
 		 	</form>
 		 	<p>FOR HELP<span><a href="mailto:example@mail.com">pets-care@mail.com</a></span></p>
-		 	</div>
+		 	</div> -->
 	</div>
 </div>
 <!--/daily-updates-->
 <!--support-->
-<div class="support">
+<!-- <div class="support">
 	<div class="container">
 		<div class="support-info">
 			<h4>OUR TEAM FOR SUPPORT</h4>
@@ -150,7 +156,7 @@
 						<div class="clearfix"> </div>
 		</div>
 	</div>
-</div>
+</div> -->
 	
 <!--/support-->
 <!--contact-->

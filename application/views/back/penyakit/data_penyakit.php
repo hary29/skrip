@@ -6,10 +6,10 @@
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Data Penyakit</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Refresh</a>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Refresh</a>
                         <ol class="breadcrumb">
                             <li><a href="<?php echo base_url() ?>front/Log/logout">Hospital</a></li>
-                            <li class="active">Dashboard</li>
+                            <li class="active">Penyakit</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -35,8 +35,10 @@
                       <td><?php echo $list['nama_penyakit']; ?></td>
                       <td><?php echo $list['definisi']; ?></td>
                       <td>
+                        <?php $level= $this->session->userdata('level'); 
+                                if($level==1){?>
                       <a href="<?php echo base_url() ?>back/penyakit/edit/<?php echo $list['id_penyakit'] ?>"><label class="btn btn-info btn-sm" >edit</a> &nbsp 
-                      <a href="<?php echo base_url() ?>back/penyakit/delete/<?php echo $list['id_penyakit'] ?>"><label class="btn btn-danger btn-sm delete" >delete</a> &nbsp
+                      <a href="<?php echo base_url() ?>back/penyakit/delete/<?php echo $list['id_penyakit'] ?>"><label class="btn btn-danger btn-sm delete" >delete</a> &nbsp <?php } ?>
                       <a href="<?php echo base_url() ?>back/penyakit/detail/<?php echo $list['id_penyakit'] ?>"><label class="btn btn-warning btn-sm" >detail</a>&nbsp
                       </td>
                     </tr>

@@ -5,7 +5,7 @@
                         <h4 class="page-title">Register User</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Refresh</a>
                         <ol class="breadcrumb">
-                            <li><a href="<?php echo base_url() ?>back/home_back">Dashboard</a></li>
+                            <li><a href="<?php echo base_url() ?>front/Log/logout">Hospital</a></li>
                             <li><a href="#">Register</a></li>
                             <li class="active"><a href="<?php echo base_url() ?>back/register/register_user">Register User</a></li>
                         </ol>
