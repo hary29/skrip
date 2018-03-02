@@ -31,12 +31,11 @@ if($level==1){?>
                             <li> <a href="<?php echo base_url() ?>back/register">Register Anjing</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><i class="icon-note p-r-10"></i><span class="hide-menu">Pemeriksaan</span></a>
-                        <!-- <ul class="nav nav-second-level">
-                            <li> <a href="inbox.html">Inbox</a></li>
-                            <li> <a href="inbox-detail.html">Inbox detail</a></li>
-                            <li> <a href="compose.html">Compose mail</a></li>
-                        </ul> -->
+                     <li> <a href="" class="waves-effect"><i class=" icon-note p-r-10"></i> <span class="hide-menu"> pemeriksaan <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <!-- <li> <a href="<?php echo base_url() ?>back/register/register_user">Register User</a> </li> -->
+                            <li> <a href="<?php echo base_url() ?>back/pemeriksaan">pemeriksaan Anjing</a> </li>
+                        </ul>
                     </li>
                     <li class="nav-small-cap m-t-10">--- Manage</li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar p-r-10"></i> <span class="hide-menu"> Metode <span class="fa arrow"></span></span></a>
@@ -55,7 +54,7 @@ if($level==1){?>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-comments-smiley p-r-10"></i> <span class="hide-menu"> Anjing <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="patients.html">Semua Anjing</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/anjing">Semua Anjing</a> </li>
                            <!--  <li> <a href="add-patient.html">Tambah </a> </li> -->
                             <!-- <li> <a href="edit-patient.html">Edit Patient</a> </li>
                             <li> <a href="patient-profile.html">Patient Profile</a> </li> -->
@@ -130,13 +129,13 @@ if($level==1){?>
                             <li> <a href="<?php echo base_url() ?>back/register">Register Anjing</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="<?php echo base_url() ?>back/home_back" class="waves-effect"><i class="icon-note p-r-10"></i><span class="hide-menu">Pemeriksaan<span class="label label-rouded label-danger pull-right"></span></span></a>
-                        <!-- <ul class="nav nav-second-level">
-                            <li> <a href="inbox.html">Inbox</a></li>
-                            <li> <a href="inbox-detail.html">Inbox detail</a></li>
-                            <li> <a href="compose.html">Compose mail</a></li>
-                        </ul> -->
+                     <li> <a href="" class="waves-effect"><i class=" icon-note p-r-10"></i> <span class="hide-menu"> pemeriksaan <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <!-- <li> <a href="<?php echo base_url() ?>back/register/register_user">Register User</a> </li> -->
+                            <li> <a href="<?php echo base_url() ?>back/pemeriksaan">pemeriksaan Anjing</a> </li>
+                        </ul>
                     </li>
+                   
                     <li class="nav-small-cap m-t-10">--- Manage</li>
                     <!-- <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar p-r-10"></i> <span class="hide-menu"> Metode <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
@@ -154,7 +153,7 @@ if($level==1){?>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-comments-smiley p-r-10"></i> <span class="hide-menu"> Anjing <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="patients.html">Semua Anjing</a> </li>
+                            <li> <a href="<?php echo base_url() ?>back/anjing/anjing_user">Semua Anjing</a> </li>
                            <!--  <li> <a href="add-patient.html">Tambah </a> </li> -->
                             <!-- <li> <a href="edit-patient.html">Edit Patient</a> </li>
                             <li> <a href="patient-profile.html">Patient Profile</a> </li> -->

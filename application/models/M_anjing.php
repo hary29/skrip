@@ -20,9 +20,21 @@ class M_anjing extends CI_Model {
 
 		$this->db->select('*');
     	$this->db->join('tb_user', 'tb_anjing.id_user = tb_user.id_user','Left');
-    	$this->db->order_by('id_anjing','asc');
+    	$this->db->order_by('nama','asc');
     	//$this->db->where('');
     	$query = $this->db->get('tb_anjing',$num, $offset);
+    	if($query->num_rows() > 0) {
+        $results = $query->result_array();
+    	}
+    	return $results;
+	}
+	public function daftar_anjing_user($id) {
+		
+		$this->db->select('*');
+		$this->db->where('id_user',$id);
+    	$this->db->order_by('id_anjing','asc');
+    	
+    	$query = $this->db->get('tb_anjing');
     	if($query->num_rows() > 0) {
         $results = $query->result_array();
     	}
@@ -46,5 +58,27 @@ class M_anjing extends CI_Model {
 		return $this->db->delete('tb_anjing');
 	}
 
-	
+	public function get_anjing()
+	{
+    $query = $this->db->get('tb_anjing'); 
+    	return $query-> result_array() ;
+	}
+	public function get_anjing_user($id)
+	{
+		$this->db->where('id_user', $id);
+    $query = $this->db->get('tb_anjing'); 
+    	return $query-> result() ;
+	}
+	public function get_cari_anjing($id) {
+    $this->db->select('*');
+    $this->db->where('id_anjing', $id);
+    $query = $this->db->get('tb_anjing'); 
+    	return $query->result_array();
+	}
+	public function get_last_id_anjing()
+    {
+        $this->db->select_max($this->kd);
+        $this->db->order_by($this->kd, $this->order);
+        return $this->db->get($this->table)->row();
+    }
 }
