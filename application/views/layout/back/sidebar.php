@@ -84,7 +84,7 @@ if($level==1){?>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Hasil Pemeriksaan<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="payments.html">Hasil periksa</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/pemeriksaan/view_hasil">Hasil periksa</a></li>
                            <!--  <li> <a href="add-payments.html">Add Payment</a></li>
                             <li> <a href="patient-invoice.html">Patient Invoice</a></li> -->
                         </ul>
@@ -183,7 +183,7 @@ if($level==1){?>
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Hasil Pemeriksaan<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="payments.html">Hasil periksa</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/pemeriksaan/view_hasil_user">Hasil periksa</a></li>
                            <!--  <li> <a href="add-payments.html">Add Payment</a></li>
                             <li> <a href="patient-invoice.html">Patient Invoice</a></li> -->
                         </ul>

@@ -13,7 +13,8 @@ class Pemeriksaan extends CI_Controller {
 
 public function index()
   {
-
+    $level= $this->session->userdata('level'); 
+                                if($level==1){
     $data['priksa']=$this->m_pemeriksaan->liatgejala();
     $data['dog']=$this->m_pemeriksaan->get_dog();
 
@@ -21,6 +22,17 @@ public function index()
     $this->load->view('layout/back/sidebar',$data);
     $this->load->view('back/pemeriksaan/data_pemeriksaan',$data);
     $this->load->view('layout/back/footer',$data);
+  }
+  else{
+    $id= $this->session->userdata('id');
+    //print_r($id);exit;
+    $data['priksa']=$this->m_pemeriksaan->liatgejala();
+    $data['dog']=$this->m_pemeriksaan->get_dog_user($id);
+
+    $this->load->view('layout/back/header',$data);
+    $this->load->view('layout/back/sidebar',$data);
+    $this->load->view('back/pemeriksaan/data_pemeriksaan',$data);
+    $this->load->view('layout/back/footer',$data);}
   }
 
 public function diagnosa_user()
@@ -181,7 +193,7 @@ public function simpantmp()
 	
 	$data['viewdiagnosa']=$this->m_pemeriksaan->diagnosa_v($id);
 	$data['viewinput']=$this->m_pemeriksaan->pemeriksaan_v($id);
-
+//print_r($data);exit;
 	$this->load->view('layout/back/header');
   $this->load->view('layout/back/sidebar');
   $this->load->view('back/pemeriksaan/hasil',$data);
@@ -226,6 +238,55 @@ public function simpantmp()
       $data['user'] = $this->m_pemeriksaan->get_u();
       $data['anjing'] = $this->m_pemeriksaan->get_a();
       $data['bayes'] = $this->m_pemeriksaan->get_b();
+      //$data['username'] = $this->session->userdata('username');
+      //$data['id_user'] = $this->session->userdata('id_user');
+  
+
+  $this->load->view('layout/back/header');
+  $this->load->view('layout/back/sidebar');
+  $this->load->view('back/pemeriksaan/semua_hasil',$data);
+  $this->load->view('layout/back/footer');
+}
+  public function view_hasil_user($offset=0)
+  {
+      $id = $this->session->userdata('id'); 
+      $jml = $this->m_pemeriksaan->hasil_user($id);
+
+      $config['base_url'] = base_url().'/back/pemeriksaan/view_hasil/';
+      $config['total_rows'] = $jml;
+      $config['per_page'] = 10;
+      $config['uri_segment'] = 4;
+      $config['full_tag_open'] = '<ul class="pagination pagination-sm" style="position:relative; top:-25px;">';
+      $config['full_tag_close'] = '</ul>';
+      $config['first_link'] = '&laquo; First';
+      $config['first_tag_open'] = '<li class="prev page">';
+      $config['first_tag_close'] = '</li>';
+      $config['last_link'] = 'Last &raquo;';
+      $config['last_tag_open'] = '<li class="next page">';
+      $config['last_tag_close'] = '</li>';
+      $config['next_link'] = 'Next &rarr;';
+      $config['next_tag_open'] = '<li class="next page">';
+      $config['next_tag_close'] = '</li>';
+      $config['prev_link'] = '&larr; Prev';
+      $config['prev_tag_open'] = '<li class="prev page">';
+      $config['prev_tag_close'] = '</li>';
+      $config['cur_tag_open'] = '<li class="active"><a href="">';
+      $config['cur_tag_close'] = '</a></li>';
+      $config['num_tag_open'] = '<li class="page">';
+      $config['num_tag_close'] = '</li>';
+
+      $this->pagination->initialize($config);
+      $this->uri->segment(4) ? $this->uri->segment(4) : 0;
+
+      $data['halaman'] = $this->pagination->create_links();
+      $data['offset'] = $offset;
+      $data['vhs'] = $this->m_pemeriksaan->get_hasil_user($config['per_page'], $offset, $id);
+      $data['penyakit'] = $this->m_pemeriksaan->get_pny();
+      $data['user'] = $this->m_pemeriksaan->get_u();
+      $data['anjing'] = $this->m_pemeriksaan->get_a();
+      $data['bayes'] = $this->m_pemeriksaan->get_b();
+
+      //print_r($data);exit;
       //$data['username'] = $this->session->userdata('username');
       //$data['id_user'] = $this->session->userdata('id_user');
   
