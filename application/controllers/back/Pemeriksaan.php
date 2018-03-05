@@ -89,8 +89,9 @@ public function diagnosa_user()
       );
       $this->m_pemeriksaan->updatetmp($id_bobot,$datatmp); 
     }
+  }
 
-    $dt=array(
+  $dt=array(
       'id_diagnosa'=>$row->id_diagnosa,
       'id_user'=>$row->id_user,
       'id_anjing'=>$row->id_anjing,
@@ -99,7 +100,6 @@ public function diagnosa_user()
 
     $this->m_pemeriksaan->simpan_diagnosa($dt);
     
-  }
   redirect('pemeriksaan/proseshitung_user');
 }
 
@@ -164,8 +164,9 @@ public function simpantmp()
       );
       $this->m_pemeriksaan->updatetmp($id_bobot,$datatmp); 
     }
+  }
 
-    $dt=array(
+  $dt=array(
       'id_diagnosa' => $this->input->post('id_diagnosa'),
       'id_user' => $this->input->post('id_user'),
       'id_anjing' => $this->input->post('id_anjing'),
@@ -174,7 +175,6 @@ public function simpantmp()
 
     $this->m_pemeriksaan->simpan_diagnosa($dt);
     
-  }
   redirect('back/pemeriksaan/proseshitung');
 }
 
