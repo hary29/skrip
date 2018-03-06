@@ -78,7 +78,7 @@ if($level==1){?>
                      <li> <a href="javascript:void(0);" class="waves-effect"><i class=" ti-shopping-cart-full p-r-10"></i> <span class="hide-menu"> Bobot <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="<?php echo base_url() ?>back/bobot">Semua Bobot</a></li>
-                            <li> <a href="<?php echo base_url() ?>back/bobot/tambah">Tambah Gejala</a></li>
+                            <li> <a href="<?php echo base_url() ?>back/bobot/tambah">Tambah Bobot</a></li>
                             <!-- <li> <a href="sales-report.html">Sales Report</a></li> -->
                         </ul>
                     </li>
