@@ -111,6 +111,13 @@ public function proseshitung_user()
 
 public function simpantmp()
 {
+  //print_r($_POST);exit;
+  $anjing=$this->input->post('id_anjing');
+  if ($anjing ==  "--Pilih Jenis Anjing--"){
+    $this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih anjing</div>");
+  redirect('back/pemeriksaan');
+  }
+  else{
   $this->m_pemeriksaan->hapustmp();
   
   $pindahdata= $this->m_pemeriksaan->pindahdata();
@@ -156,7 +163,7 @@ public function simpantmp()
       );
       $this->m_pemeriksaan->updatetmp($id_bobot,$datatmp); 
     }
-  }
+  }}
 
   $dt=array(
       'id_diagnosa' => $this->input->post('id_diagnosa'),

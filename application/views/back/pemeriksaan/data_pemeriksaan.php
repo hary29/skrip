@@ -14,6 +14,12 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+                  <?php 
+  if ($this->session->flashdata('sukses')) {
+    echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
+  }
+  echo validation_errors('<p class="warning" style="margin: 10px 20px;">','</p>');
+   ?>
                 <?php $id=$this->session->userdata('id');
                 date_default_timezone_set("Asia/Jakarta");
                 $date= date_default_timezone_get();
