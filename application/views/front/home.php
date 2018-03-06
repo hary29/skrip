@@ -32,7 +32,7 @@
 				<div class="col-md-4 doctor-self-left">
 					<img src="<?php echo base_url() ?>front/images/5.jpg" class="img-responsive" alt=""/>
 					<h4>Turban (1995)</h4>
-					<h5>sistem pakar (expert system)</h5>
+					<h5>sistem pakar <i>(expert system)</i></h5>
 				</div>
 				<div class="col-md-8 doctor-self-left" align="left">
 					&emsp;&emsp;&emsp; konsep dasar sistem pakar mengandung : keahlian, ahli, pengalihan keahlian, inferensi, Turban (1995) mengatakan bahwa sistem pakar sendiri terdiri dari bberapa karakteristik yang melekat. Berikut ini adalah beberapa karakteristik dari sistem pakar :
