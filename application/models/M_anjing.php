@@ -81,4 +81,17 @@ class M_anjing extends CI_Model {
         $this->db->order_by($this->kd, $this->order);
         return $this->db->get($this->table)->row();
     }
+    public function jumlah_anjing()
+	{
+		$this->db->select('*');
+		$query = $this->db->get('tb_anjing'); 
+		return $query->num_rows();
+	}
+	public function jumlah_anjing_user($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id_user', $id);
+		$query = $this->db->get('tb_anjing'); 
+		return $query->num_rows();
+	}
 }

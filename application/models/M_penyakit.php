@@ -84,6 +84,11 @@ class M_penyakit extends CI_Model {
 		$query = $this->db->get_where('tb_penyakit', array('id_penyakit' => $id));
 		return $query->result_array();
     }
-	
+	public function jumlah_penyakit()
+	{
+		$this->db->select('*');
+		$query = $this->db->get('tb_penyakit'); 
+		return $query->num_rows();
+	}
 
 }

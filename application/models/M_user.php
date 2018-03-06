@@ -136,4 +136,14 @@ class M_user extends CI_Model {
 		$query = $this->db->get('tb_user'); 
 		return $query->num_rows();
 	}
+     public function hitung_perlevel()
+  {
+    $this->db->select('*, COUNT(tb_user.id_level) as total');
+    //$this->db->from('tb_diagnosa','tb_penyakit');
+    $this->db->join('tb_level', 'tb_user.id_level = tb_level.id_level','Left');
+    $this->db->group_by('tb_user.id_level'); 
+    $this->db->order_by('total', 'desc');
+    $query=$this->db->get('tb_user'); 
+    return $query->result_array();
+  }
 }

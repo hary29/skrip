@@ -84,6 +84,12 @@ class M_gejala extends CI_Model {
 		$query = $this->db->get_where('tb_gejala', array('id_gejala' => $id));
 		return $query->result_array();
   }
+  public function jumlah_gejala()
+	{
+		$this->db->select('*');
+		$query = $this->db->get('tb_gejala'); 
+		return $query->num_rows();
+	}
 	
 
 }

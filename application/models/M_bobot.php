@@ -79,6 +79,15 @@ class M_bobot extends CI_Model {
   	$query = $this->db->get('tb_gejala');
   	return $query->result();
  	}
-	
+	 public function hitung_bobot_perpenyakit()
+  {
+    $this->db->select('*, COUNT(tb_bobot.id_penyakit) as total');
+    //$this->db->from('tb_diagnosa','tb_penyakit');
+    $this->db->join('tb_penyakit', 'tb_bobot.id_penyakit = tb_penyakit.id_penyakit','Left');
+    $this->db->group_by('tb_bobot.id_penyakit'); 
+    $this->db->order_by('total', 'desc');
+    $query=$this->db->get('tb_bobot'); 
+    return $query->result_array();
+  }
 
 }
