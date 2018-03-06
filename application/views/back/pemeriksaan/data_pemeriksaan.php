@@ -6,7 +6,7 @@
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Pemeriksaan</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Refresh</a>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Refresh</a>
                         <ol class="breadcrumb">
                             <li><a href="<?php echo base_url() ?>front/Log/logout">Hospital</a></li>
                             <li class="active">Dashboard</li>
@@ -49,7 +49,8 @@
                                       </div>
 
                                       </br>
-
+                                      <?php
+                                      foreach($dog->result() as $pny) {  if ($pny !='') { ?>
                                       <h3>Pilih Gejala Yang Dialami</h3>
 
                                       <?php 
@@ -59,15 +60,20 @@
                                                   <input name="gejala[]" type="checkbox" value="<?php echo $row->id_gejala; ?>"><?php echo $row->gejala; ?>
                                               </label>
                                           </div>
-                                      <?php }?>
+                                      <?php } ?> 
 
                               </br>
                           
                               
                               <button type="submit" class="btn btn-primary">Proses</button>&nbsp &nbsp
                               <br>
+                               <?php }else {
+                                        ?>
+                                        <div style="color:#0000FF"> <label for="aa" class="col-sm-4">
+                                        <h3><b>SILAHKAN REGISTRASI ANJING ANDA TERLEBIH DAHULU</b></h3></label> <?php } } ?></div>
                               
                               </form>
+
                         </div>
                     </div>
                     </div>

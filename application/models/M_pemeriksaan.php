@@ -270,4 +270,42 @@ class M_pemeriksaan extends CI_Model{
      $query = $this->db->get('',$num,$offset);
     return $query->result_array();
   }
+  public function jumlah_diagnosa()
+  {
+    $this->db->select('*');
+    $query = $this->db->get('tb_diagnosa'); 
+    return $query->num_rows();
+  }
+  public function hitung_perpenyakit()
+  {
+    $this->db->select('*, COUNT(tb_diagnosa.id_penyakit) as total');
+    //$this->db->from('tb_diagnosa','tb_penyakit');
+    $this->db->join('tb_penyakit', 'tb_diagnosa.id_penyakit = tb_penyakit.id_penyakit','Left');
+    $this->db->group_by('tb_diagnosa.id_penyakit'); 
+    $this->db->order_by('total', 'desc');
+    $query=$this->db->get('tb_diagnosa'); 
+    return $query->result_array();
+  }
+   public function hitung_perpenyakit_user($id)
+  {
+    $this->db->where('tb_diagnosa.id_user',$id);
+    $this->db->select('*, COUNT(tb_diagnosa.id_penyakit) as total');
+    //$this->db->from('tb_diagnosa','tb_penyakit');
+    $this->db->join('tb_penyakit', 'tb_diagnosa.id_penyakit = tb_penyakit.id_penyakit','Left');
+
+    $this->db->group_by('tb_diagnosa.id_penyakit'); 
+    $this->db->order_by('total', 'desc');
+    $query=$this->db->get('tb_diagnosa'); 
+    return $query->result_array();
+  }
+  public function jumlah_diagnosa_user($id)
+  {
+    $this->db->select('*');
+    $this->db->where('tb_diagnosa.id_user',$id);
+    $query = $this->db->get('tb_diagnosa'); 
+    return $query->num_rows();
+  }
+
 }
+
+
