@@ -191,6 +191,17 @@ public function simpantmp()
   $this->load->view('back/pemeriksaan/hasil',$data);
   $this->load->view('layout/back/footer');
 }
+  public function tampildiagnosa1($id)
+{
+  
+  $data['viewdiagnosa']=$this->m_pemeriksaan->diagnosa_v($id);
+  $data['viewinput']=$this->m_pemeriksaan->pemeriksaan_v($id);
+//print_r($data);exit;
+  $this->load->view('layout/back/header');
+  $this->load->view('layout/back/sidebar');
+  $this->load->view('back/pemeriksaan/detail_hasil',$data);
+  $this->load->view('layout/back/footer');
+}
 
   public function view_hasil($offset=0)
   {

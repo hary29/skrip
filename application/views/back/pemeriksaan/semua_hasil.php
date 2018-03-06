@@ -40,7 +40,7 @@
                       <td><?php echo $list['tgl_diagnosa']; ?></td>
                       <td><?php echo $list['hasil']; ?></td>
                       <td><?php echo $list['teorema_bayes']; ?></td>
-                      <td> <a href="<?php echo base_url() ?>back/pemeriksaan/tampildiagnosa/<?php echo $list['id_diagnosa'] ?>"><label class="btn btn-warning btn-sm" >detail</a>&nbsp</td>
+                      <td> <a href="<?php echo base_url() ?>back/pemeriksaan/tampildiagnosa1/<?php echo $list['id_diagnosa'] ?>"><label class="btn btn-warning btn-sm" >detail</a>&nbsp</td>
                     </tr>
                     <?php } ?>
                 

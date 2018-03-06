@@ -77,7 +77,7 @@
                                 </table>
                                
                                     <div align="center">
-                                    <a href="<?php echo base_url(); ?>back/pemeriksaan" label class="btn btn-primary">Kembali</a>
+                                      <input type="button" label class="btn btn-primary" value="Kembali" onclick="history.back(-1)" />
                                     </div>
                         </div>
                     </div>
