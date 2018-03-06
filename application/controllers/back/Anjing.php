@@ -67,6 +67,7 @@ class Anjing extends CI_Controller {
 			 
 			$data['offset'] = $offset;
 			$data['data_anjing'] = $this->M_anjing->daftar_anjing($config['per_page'], $offset);
+
 			//print_r($data);exit;
 			$this->load->view('layout/back/header');
 			$this->load->view('layout/back/sidebar');
@@ -129,10 +130,14 @@ class Anjing extends CI_Controller {
 	{
 			$id= $this->session->userdata('id'); 
 			$data['data_anjing'] = $this->M_anjing->daftar_anjing_user($id);
+			//print_r($data);exit;
+			if ($data['data_anjing'] == ''){
+			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"></i><strong>error!</strong><br></i> tidak ada data anjing</div>");
+	redirect('back/home_back');}else{
 			$this->load->view('layout/back/header');
 			$this->load->view('layout/back/sidebar');
 			$this->load->view('back/anjing/anjing_user',$data);
-			$this->load->view('layout/back/footer');
+			$this->load->view('layout/back/footer');}
 	}
 	public function delete($id) {
 		$level= $this->session->userdata('level'); 
