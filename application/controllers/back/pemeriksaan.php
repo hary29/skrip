@@ -273,12 +273,13 @@ public function simpantmp()
       $data['halaman'] = $this->pagination->create_links();
       $data['offset'] = $offset;
       $data['vhs'] = $this->m_pemeriksaan->get_hasil_user($config['per_page'], $offset, $id);
+       //print_r($id);exit;
       $data['penyakit'] = $this->m_pemeriksaan->get_pny();
       $data['user'] = $this->m_pemeriksaan->get_u();
       $data['anjing'] = $this->m_pemeriksaan->get_a();
       $data['bayes'] = $this->m_pemeriksaan->get_b();
 
-      //print_r($data);exit;
+     
       //$data['username'] = $this->session->userdata('username');
       //$data['id_user'] = $this->session->userdata('id_user');
   
