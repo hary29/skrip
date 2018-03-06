@@ -308,4 +308,38 @@ public function simpantmp()
   $this->load->view('layout/back/footer');
 }
 
+public function view_hasil_pencarian()
+{     
+    $level= $this->session->userdata('level'); 
+    if($level==1){
+      $data['penyakit'] = $this->m_pemeriksaan->get_pny();
+      $data['user'] = $this->m_pemeriksaan->get_u();
+      $data['anjing'] = $this->m_pemeriksaan->get_a();
+      $data['bayes'] = $this->m_pemeriksaan->get_b();
+      $data_cari = $this->input->post('search');
+      $data['cari'] = $this->m_pemeriksaan->get_cari($data_cari);
+        
+      $this->load->view('layout/back/header');
+      $this->load->view('layout/back/sidebar');
+      $this->load->view('back/pemeriksaan/hasil_pencarian',$data);
+      $this->load->view('layout/back/footer');
+    }
+    else{
+      $id = $this->session->userdata('id'); 
+      $jml = $this->m_pemeriksaan->hasil_user($id);
+      $data['penyakit'] = $this->m_pemeriksaan->get_pny();
+      $data['user'] = $this->m_pemeriksaan->get_u();
+      $data['anjing'] = $this->m_pemeriksaan->get_a();
+      $data['bayes'] = $this->m_pemeriksaan->get_b();
+      $data_cari = $this->input->post('search');
+      $data['cari'] = $this->m_pemeriksaan->get_cari_user($data_cari, $id);
+
+      $this->load->view('layout/back/header');
+      $this->load->view('layout/back/sidebar');
+      $this->load->view('back/pemeriksaan/hasil_pencarian',$data);
+      $this->load->view('layout/back/footer');
+
+    }
+  }
+
 }

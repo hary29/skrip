@@ -17,6 +17,18 @@
                  <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
+                          <div class="form-group">
+                        <form action="<?php echo base_url();?>back/pemeriksaan/view_hasil_pencarian" method=POST>
+                              <div class="input-group">
+                              
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="Pencarian">
+                                    <button type="submit" value="cari" class="btn btn-sm"><span class="glyphicon glyphicon-search"></span>Cari</button>
+                                    <div class="input-group-addon"><a href="<?php echo base_url() ?>back/pemeriksaan/view_hasil_pencarian">
+                              
+                                    </div>
+                                    </form>
+                              </div>
+                        </div>
                              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-striped">
                     
                     <tr class="active">
