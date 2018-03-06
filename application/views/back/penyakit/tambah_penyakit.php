@@ -47,6 +47,13 @@
                               </div>
                               </div>
 
+                              <div class="form-group">
+                              <label for="definisi" class="col-sm-4">Pengobatan</label>
+                              <div class="col-sm-4 col-sm-offset-4">
+                                  <textarea class="form-control" rows="4" name="pengobatan" class="form-control" /></textarea>
+                              </div>
+                              </div>
+
                               </br>
                           
                               

@@ -21,9 +21,10 @@
                     
                     <tr class="active">
                       <th width="3%" scope="col">No</th>
-                      <th width="5%" scope="col">Kode Penyakit</th>
+                      <th width="3%" scope="col">Kode Penyakit</th>
                       <th width="5%" scope="col">Nama Penyakit</th>
                       <th width="5%" scope="col">Definisi</th>
+                      <th width="5%" scope="col">Pengobatan</th>
                       <th width="5%" scope="col">Aksi</th>
                     </tr>
                     <?php 
@@ -34,6 +35,7 @@
                       <td><?php echo $list['kode_penyakit']; ?></td>
                       <td><?php echo $list['nama_penyakit']; ?></td>
                       <td><?php echo $list['definisi']; ?></td>
+                      <td><?php echo $list['pengobatan']; ?></td>
                       <td>
                         <?php $level= $this->session->userdata('level'); 
                                 if($level==1){?>

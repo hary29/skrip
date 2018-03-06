@@ -65,7 +65,8 @@ class Penyakit extends CI_Controller {
 			'kode_penyakit' => $this->input->post('kode_penyakit'),
 			'id_user' => $this->input->post('id_user'),
 			'nama_penyakit' => $this->input->post('nama_penyakit'),
-			'definisi' => $this->input->post('definisi')
+			'definisi' => $this->input->post('definisi'),
+			'pengobatan' => $this->input->post('pengobatan')
 			);
 		$this->m_penyakit->tambah($data_penyakit);
 		$this->session->set_flashdata("pesan", "<div class=\"alert alert-success\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"></i> Berhasil menambah data</div>");
@@ -91,7 +92,8 @@ class Penyakit extends CI_Controller {
 			'kode_penyakit' => $this->input->post('kode_penyakit'),
 			'id_user' => $this->input->post('id_user'),
 			'nama_penyakit' => $this->input->post('nama_penyakit'),
-			'definisi' => $this->input->post('definisi')
+			'definisi' => $this->input->post('definisi'),
+			'pengobatan' => $this->input->post('pengobatan')
 			);
 
           $this->m_penyakit->edit($data_penyakit);

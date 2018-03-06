@@ -40,6 +40,12 @@
                                     <th><?php echo $list['definisi']; ?></th>
                                   </tr>
 
+                                    <tr>
+                                    <th>Pengobatan</th>
+                                    <th>:</th>
+                                    <th><?php echo $list['pengobatan']; ?></th>
+                                  </tr>
+
                                 <?php } ?>
                             
                               </table>
