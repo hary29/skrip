@@ -109,14 +109,6 @@ public function proseshitung_user()
   $this->tema->pasien('diagnosa_user/proses_hitung',$data);
 }
 
-public function tampildiagnosa_user($id)
-{
-	$data['judul']="Hasil Diagnosa";
-	$data['viewdiagnosa']=$this->m_pemeriksaan->diagnosa_v($id);
-	$data['viewinput']=$this->m_pemeriksaan->pemeriksaan_v($id);
-	$this->tema->pasien('diagnosa_user/diagnosa_hasil',$data);
-}
-
 public function simpantmp()
 {
   $this->m_pemeriksaan->hapustmp();
@@ -252,7 +244,7 @@ public function simpantmp()
       $id = $this->session->userdata('id'); 
       $jml = $this->m_pemeriksaan->hasil_user($id);
 
-      $config['base_url'] = base_url().'/back/pemeriksaan/view_hasil/';
+      $config['base_url'] = base_url().'/back/pemeriksaan/view_hasil_user/';
       $config['total_rows'] = $jml;
       $config['per_page'] = 10;
       $config['uri_segment'] = 4;

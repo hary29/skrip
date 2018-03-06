@@ -27,6 +27,7 @@
                       <th width="15%" scope="col">Tanggal</th>
                       <th width="5%" scope="col">Probabilitas</th>
                       <th width="5%" scope="col">Hasil Diagnosa</th>
+                      <th width="5%" scope="col">Aksi</th>
                     </tr>
                     <?php 
                       $no = $offset;
@@ -39,6 +40,7 @@
                       <td><?php echo $list['tgl_diagnosa']; ?></td>
                       <td><?php echo $list['hasil']; ?></td>
                       <td><?php echo $list['teorema_bayes']; ?></td>
+                      <td> <a href="<?php echo base_url() ?>back/pemeriksaan/tampildiagnosa/<?php echo $list['id_diagnosa'] ?>"><label class="btn btn-warning btn-sm" >detail</a>&nbsp</td>
                     </tr>
                     <?php } ?>
                 

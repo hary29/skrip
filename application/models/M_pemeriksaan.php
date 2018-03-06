@@ -265,6 +265,7 @@ class M_pemeriksaan extends CI_Model{
      $this->db->join('tb_bayes', 'tb_diagnosa.id_bayes = tb_bayes.id_bayes','Left');
      $this->db->join('tb_anjing', 'tb_diagnosa.id_anjing = tb_anjing.id_anjing','Left');
      $this->db->where('tb_diagnosa.id_user',$id);
+     $this->db->where('tb_diagnosa.id_bayes',$id);
      $this->db->order_by('id_diagnosa','asc');
      $query = $this->db->get('',$num,$offset);
     return $query->result_array();
