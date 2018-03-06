@@ -24,7 +24,9 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-12 col-md-12">
-                        <div class="white-box">
+                        <div class="white-box"><?php $pny='';foreach($dog->result() as $pny1) { $pny=$pny1;
+                        
+                        }if ($pny !='') { ?>
                              <form class="form-horizontal" action="<?php echo base_url(). 'back/pemeriksaan/simpantmp'; ?>" method="POST">
 
                                       <input type="hidden" name="id_user" required="" value="<?php echo $id ?>" readonly="readonly" class="form-control" />
@@ -49,8 +51,7 @@
                                       </div>
 
                                       </br>
-                                      <?php
-                                      foreach($dog->result() as $pny) {  if ($pny !='') { ?>
+                                    
                                       <h3>Pilih Gejala Yang Dialami</h3>
 
                                       <?php 
@@ -70,7 +71,7 @@
                                <?php }else {
                                         ?>
                                         <div style="color:#0000FF"> <label for="aa" class="col-sm-4">
-                                        <h3><b>SILAHKAN REGISTRASI ANJING ANDA TERLEBIH DAHULU</b></h3></label> <?php } } ?></div>
+                                        <h3><b>SILAHKAN REGISTRASI ANJING ANDA TERLEBIH DAHULU</b></h3></label> <?php }  ?></div>
                               
                               </form>
 
