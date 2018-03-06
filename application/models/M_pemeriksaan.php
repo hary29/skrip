@@ -272,7 +272,7 @@ class M_pemeriksaan extends CI_Model{
     return $query->result_array();
   }
 
-  public function get_cari($data_cari) {
+   public function get_cari($data_cari) {
      $this->db->select('tb_diagnosa.id_diagnosa,tb_diagnosa.id_penyakit,tb_anjing.nama_anjing,tb_user.username,tb_penyakit.nama_penyakit,tb_penyakit.definisi,tb_diagnosa.tgl_diagnosa,tb_diagnosa.hasil,tb_bayes.teorema_bayes');
      $this->db->from('tb_diagnosa','tb_user','tb_penyakit','tb_bayes','tb_anjing');
      $this->db->join('tb_user', 'tb_diagnosa.id_user = tb_user.id_user','Left');
@@ -294,8 +294,7 @@ class M_pemeriksaan extends CI_Model{
      $this->db->join('tb_penyakit', 'tb_diagnosa.id_penyakit = tb_penyakit.id_penyakit','Left');
      $this->db->join('tb_bayes', 'tb_diagnosa.id_bayes = tb_bayes.id_bayes','Left');
      $this->db->join('tb_anjing', 'tb_diagnosa.id_anjing = tb_anjing.id_anjing','Left');
-     $this->db->like('username', $data_cari);
-     $this->db->or_like('nama_anjing', $data_cari);
+     $this->db->like('nama_anjing', $data_cari);
      $this->db->or_like('nama_penyakit', $data_cari);
      $this->db->where('tb_diagnosa.id_user',$id);
      $query = $this->db->get();
