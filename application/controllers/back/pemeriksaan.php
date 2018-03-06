@@ -290,22 +290,38 @@ public function simpantmp()
   $this->load->view('layout/back/footer');
 }
 
-public function cari() {
-    $data['username'] = $this->session->userdata('username');
-    $data['id_user'] = $this->session->userdata('id_user');
-    $data_cari = $this->input->post('search');
-    $data['cari'] = $this->m_gejala->get_cari($data_cari);
-        if($data['search']==null) {
-          echo $this->session->set_flashdata("pesan", "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"></i> Data yang dicari tidak ditemukan</div>");
-          redirect('admin/gejala');
-        }
-        else
-        {
-    $this->load->view('layout/back/header');
-    $this->load->view('layout/back/sidebar');
-    $this->load->view('back/pemeriksaan/hasil_pencarian',$data);
-    $this->load->view('layout/back/footer');
-        } 
+public function view_hasil_pencarian()
+{     
+    $level= $this->session->userdata('level'); 
+    if($level==1){
+      $data['penyakit'] = $this->m_pemeriksaan->get_pny();
+      $data['user'] = $this->m_pemeriksaan->get_u();
+      $data['anjing'] = $this->m_pemeriksaan->get_a();
+      $data['bayes'] = $this->m_pemeriksaan->get_b();
+      $data_cari = $this->input->post('search');
+      $data['cari'] = $this->m_pemeriksaan->get_cari($data_cari);
+        
+      $this->load->view('layout/back/header');
+      $this->load->view('layout/back/sidebar');
+      $this->load->view('back/pemeriksaan/hasil_pencarian',$data);
+      $this->load->view('layout/back/footer');
+    }
+    else{
+      $id = $this->session->userdata('id'); 
+      $jml = $this->m_pemeriksaan->hasil_user($id);
+      $data['penyakit'] = $this->m_pemeriksaan->get_pny();
+      $data['user'] = $this->m_pemeriksaan->get_u();
+      $data['anjing'] = $this->m_pemeriksaan->get_a();
+      $data['bayes'] = $this->m_pemeriksaan->get_b();
+      $data_cari = $this->input->post('search');
+      $data['cari'] = $this->m_pemeriksaan->get_cari_user($data_cari, $id);
+
+      $this->load->view('layout/back/header');
+      $this->load->view('layout/back/sidebar');
+      $this->load->view('back/pemeriksaan/hasil_pencarian',$data);
+      $this->load->view('layout/back/footer');
+
+    }
   }
 
 }
