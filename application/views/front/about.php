@@ -1,4 +1,4 @@
-<!--script-nav -->	
+script-nav -->	
 			        <script>
 					$("span.menu-info").click(function(){
 						$("ul.cl-effect-21").slideToggle("slow" , function(){
@@ -15,25 +15,48 @@
 	<div class="container">
 				<div class="about-top">
 					<div class="about-top-info">
-							<h3>About</h3>
+							<h3>Tentang Penyakit</h3>
+							<h4> berikut definisi  singkat dari beberapa penyakit yang digunakan dalam sistem pakar ini </h4><br>
 							<div class="col-md-4 about-img">
 								<img src="<?php echo base_url() ?>asset/front/images/pic8.jpg" alt=""/>
 							</div>
 							<div class="col-md-8 about-desc">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-									 dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
-									 suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in 
-									 vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-									  et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-									  <span>Lorem ipsum dolor sit amet,consectetuer adipiscing elit,sed diam nonummy nibh euismod.tincidunt ut 
-										laoreet dolore magna aliquam erat volutpat. Ut wisi enimad minim veniam, quis nostrud exercitation ullamcorper 
-										suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.,</span></p>
-								<a class="about-desc-button" href="#">READ MORE</a>
+
+								<div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-striped">
+                    
+                    <tr class="active">
+                     
+                      <th width="5%" scope="col">Nama Penyakit</th>
+                      <th width="5%" scope="col">Definisi</th>
+                      
+                    </tr>
+                    <?php 
+                     
+                    foreach($penyakit as $list) { ?>
+                    <tr>
+                      
+                      <td><?php echo $list['nama_penyakit']; ?></td>
+                      <td><?php echo $list['definisi']; ?></td>
+                      
+                    </tr>
+                    <?php } ?>
+                    <?php echo $this->session->flashdata('pesan'); ?>
+                    
+                    
+                  </table>
+                  
+                                  </div>
+                                 
+                              </div>
+								<!-- <a class="about-desc-button" href="#">READ MORE</a> -->
 							</div>
 							<div class="clearfix"> </div>
 					</div>
 			</div>
-			<div class="about-bottom">
+			<!-- <div class="about-bottom">
 						<div class="about-topgrid1">
 							<h3>Who We Are</h3>
 					<div class="col-md-8 about-bottom-info">
@@ -46,7 +69,7 @@
 						 </div>
 						 <div class="clearfix"> </div>
 					</div>
-					</div>
+					</div> -->
 					 <div class="clearfix"> </div>
 		</div>
 </div>
@@ -119,4 +142,4 @@
 	</div>
 	</div>
 </div>
-<!--/about-->
+<!--/about

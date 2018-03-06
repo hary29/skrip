@@ -51,6 +51,13 @@ class M_penyakit extends CI_Model {
     	}
     	return $results;
 	}
+	public function daftar_penyakit1() {
+    	$query = $this->db->get('tb_penyakit');
+    	if($query->num_rows() > 0) {
+        $results = $query->result_array();
+    	}
+    	return $results;
+	}
 
   // Fungsi pencarian
  	public function get_cari($data_cari) {

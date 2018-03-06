@@ -31,7 +31,8 @@
 				</div>
 			<form action="<?php echo base_url(); ?>front/log/login" class="login100-form validate-form" method="POST">
 					<span class="login100-form-title">
-						 Login
+						 <h3>Login</h3><br>
+						<h5> Silahkan login terlebih dahulu untuk melakukan pemeriksaan pada anjing anda. jika belum terdaftar silahkan melakukan registrasi pada menu registrasi atau <i><font color='red' > create your account </i></font> pada bagian bawah form login</h5>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Username is required!!!">
@@ -55,12 +56,9 @@
 							Login
 						</button>
 					</div>
-
-					
-
-					<div class="text-center p-t-136">
+					<div class="text-center p-t-13">
 						<a class="txt2" href="<?php echo base_url() ?>front/register">
-							Create your Account
+							<b>Create your Account</b>
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>

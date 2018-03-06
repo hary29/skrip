@@ -27,23 +27,21 @@
 <div class="doctor-self">
 	<div class="container">
 		<div class="doctor-self-info">
-			<h3>WHAT WOULD OUR DEAN SAYS</h3>
+			<h3>APA SISTEM PAKAR ITU ???</h3>
 			<div class="doctor-self-info-bottom">
 				<div class="col-md-4 doctor-self-left">
 					<img src="<?php echo base_url() ?>front/images/5.jpg" class="img-responsive" alt=""/>
-					<h4>DR.JIMMY</h4>
-					<h5>lorem lipsum doolr in groem horntim</h5>
+					<h4>Turban (1995)</h4>
+					<h5>sistem pakar (expert system)</h5>
 				</div>
-				<div class="col-md-8 doctor-self-right">
-					<p>"Lorem Ipsum is simply dummy text of the printing and typesetting i
-						ndustry. Lorem Ipsum has been the industry's standard dummy text 
-						ever since the 1500s<br /><br /> reproduced below for those interested. Sections 1.10.32
-						  and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-						   are also reproduced in their exact original form, accompanied
-						    by English versions from the 1914 translation by H. Rackham
-						Lorem Ipsum is simply dummy text of the printing and typesetting i
-						ndustry. Lorem Ipsum has been the industry's standard dummy text 
-						ever since the 1500s"</p>
+				<div class="col-md-8 doctor-self-left" align="left">
+					&emsp;&emsp;&emsp; konsep dasar sistem pakar mengandung : keahlian, ahli, pengalihan keahlian, inferensi, Turban (1995) mengatakan bahwa sistem pakar sendiri terdiri dari bberapa karakteristik yang melekat. Berikut ini adalah beberapa karakteristik dari sistem pakar :
+
+Memiliki nilai kepakaran, yang mampu membantu user dalam menyelesaikan tugas dan juga membantu memecahkan masalah dengan memberikan solusi.
+Domain tertentu, merupakan kekhususan dari sebuah sistem pakar dalam membidangi suatu disiplin ilmu tertentu.
+Memiliki kemampuan untuk mengolah data yang memiliki ketidakpastian, dan mampu memberikan semacam pertimbangan, saran dan juga anjuran sesuai degnan kondisi dari lingkungan.
+Dirancang untuk dapat dikembangkan secara bertahap.
+Hingga saat ini, sistem pakar memang belum terlalu familiar di dalam dunia pendidikan, karena sistem pendidikan, terutama pendidikan di Indonesia yang masih mengandalkan guru dan tenaga pengajar, dan juga kelekatan antara murid dengan pengajar, sehingga untuk emmperoleh suatu pemecahan maslah tidak perlu menggunakan sistem pakar, namun bisa bertanya langsung ke mentor atau guru yang bersangkutan.
 				</div>
 				<div class="clearfix"> </div>
 				</div>
