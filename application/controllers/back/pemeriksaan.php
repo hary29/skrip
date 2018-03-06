@@ -290,4 +290,22 @@ public function simpantmp()
   $this->load->view('layout/back/footer');
 }
 
+public function cari() {
+    $data['username'] = $this->session->userdata('username');
+    $data['id_user'] = $this->session->userdata('id_user');
+    $data_cari = $this->input->post('search');
+    $data['cari'] = $this->m_gejala->get_cari($data_cari);
+        if($data['search']==null) {
+          echo $this->session->set_flashdata("pesan", "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"></i> Data yang dicari tidak ditemukan</div>");
+          redirect('admin/gejala');
+        }
+        else
+        {
+    $this->load->view('layout/back/header');
+    $this->load->view('layout/back/sidebar');
+    $this->load->view('back/pemeriksaan/hasil_pencarian',$data);
+    $this->load->view('layout/back/footer');
+        } 
+  }
+
 }
