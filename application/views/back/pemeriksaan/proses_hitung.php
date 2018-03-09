@@ -242,7 +242,11 @@
                                     //redirect('diagnosa/tampildiagnosa/'.$id);
 
                                   ?>
-                                  <br><center>
+                                  <br><?php
+                                  $level= $this->session->userdata('level'); 
+                                if($level!=1){
+                                  redirect('back/pemeriksaan/tampildiagnosa/'.$id);}?>
+                                  <center>
                                   <td><a href="<?php echo site_url('back/pemeriksaan/tampildiagnosa/'.$id);?>" class="btn btn-primary btn-xs">Cetak Hasil</a></td>
                                   </center>
                         </div>
