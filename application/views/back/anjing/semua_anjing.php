@@ -32,6 +32,8 @@
                                           <th >Kode Anjing</th>
                                           <th >Nama</th>
                                           <th >Nama Pemilik</th>
+                                          <th >Jenis Anjing</th>
+                                          <th >Tanggal Lahir</th>
                                           <th >Aksi</th>
                                         </tr>
                                       </thead>
@@ -45,6 +47,8 @@
                             <td><?php echo $list['kode_anjing']; ?></td>
                             <td><?php echo $list['nama_anjing']; ?></td>
                             <td><?php echo $list['nama']; ?></td>
+                            <td><?php echo $list['jenis_anjing']; ?></td>
+                            <td><?php echo $list['tanggal_lahir']; ?></td>
                             <td>
                             
                             <a href="<?php echo base_url() ?>back/anjing/edit/<?php echo $list['id_anjing'] ?>"> <label class="btn btn-info" >EDIT</a> &nbsp 

@@ -46,7 +46,7 @@
                                     <label class="control-label">No Pendaftaran <i style="color:red">*</i></label>
                                     <div class="controls">
                                    
-                                        <input type="text" name="kode_pendaftaran" id="kode_pendaftaran" readonly="readonly" value="<?php echo $list['kode_pendaftaran']; ?>"/>
+                                        <input type="text" class="form-control" name="kode_pendaftaran" id="kode_pendaftaran" readonly="readonly" value="<?php echo $list['kode_pendaftaran']; ?>"/>
                                         <small><?php echo form_error('kode') ?></small>
                                     </div>
                                 </div>

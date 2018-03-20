@@ -191,8 +191,26 @@ public function simpantmp()
 {
 	
 	$data['viewdiagnosa']=$this->m_pemeriksaan->diagnosa_v($id);
+  $date=$this->m_pemeriksaan->diagnosa_v1($id);
 	$data['viewinput']=$this->m_pemeriksaan->pemeriksaan_v($id);
-//print_r($data);exit;
+foreach ($date as $key) {
+      $date1 = $key['tanggal_lahir'];
+    }
+    $lahir = new DateTime($date1);
+    $today = new DateTime('today');
+    $y = $today->diff($lahir)->y;
+    $m = $today->diff($lahir)->m;
+    $d = $today->diff($lahir)->d;
+    $data['y'] = $y;
+    $data['m'] = $m;
+    $data['d'] = $d;
+    //print_r($d);exit;
+   $usia = $y." tahun ".$m." bulan ".$d. " hari";
+   $data_usia = array(
+        'id_diagnosa' => $id,
+        'usia' => $usia
+       );
+  $this->m_pemeriksaan->edit_usia($data_usia);
 	$this->load->view('layout/back/header');
   $this->load->view('layout/back/sidebar');
   $this->load->view('back/pemeriksaan/hasil',$data);

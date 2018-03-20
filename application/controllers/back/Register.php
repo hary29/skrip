@@ -81,13 +81,16 @@ class Register extends CI_Controller {
 		$level= $this->session->userdata('level'); 
                                 if($level==1){
 		$this->form_validation->set_rules('id_user','id_user','required');
+		$this->form_validation->set_rules('tanggal_lahir','tanggal_lahir','required');
 		if($this->form_validation->run() == false){
-			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih user</div>");
+			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih user dan inputkan tanggal lahir</div>");
 	redirect('back/register');
 		}else{
 	$data_anjing = array(
 			'kode_anjing' => $this->input->post('kode_anjing'),
 			'nama_anjing' => $this->input->post('nama_anjing'),
+			'jenis_anjing' => $this->input->post('jenis_anjing'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'id_user' => $this->input->post('id_user')
 			);
 //print_r($data_user);exit;
@@ -98,16 +101,24 @@ class Register extends CI_Controller {
 	else {
 		
 			$id= $this->session->userdata('id'); 
+			$this->form_validation->set_rules('tanggal_lahir','tanggal_lahir','required');
+		if($this->form_validation->run() == false){
+			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih user dan inputkan tanggal lahir</div>");
+	redirect('back/register');
+		}else {
 			//print_r($_POST);exit;
+		
 	$data_anjing = array(
 			'kode_anjing' => $this->input->post('kode_anjing'),
 			'nama_anjing' => $this->input->post('nama_anjing'),
+			'jenis_anjing' => $this->input->post('jenis_anjing'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'id_user' => $id
 			);
 //print_r($data_user);exit;
 	$this->M_anjing->tambah($data_anjing);
 	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Registrasi data anjing berhasil</div>");
-	redirect('back/register');}
+	redirect('back/register');}}
 	}
 
 	public function tambah_anjing_pemeriksaan()
@@ -123,6 +134,8 @@ class Register extends CI_Controller {
 	$data_anjing = array(
 			'kode_anjing' => $this->input->post('kode_anjing'),
 			'nama_anjing' => $this->input->post('nama_anjing'),
+			'jenis_anjing' => $this->input->post('jenis_anjing'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'id_user' => $this->input->post('id_user')
 			);
 //print_r($data_user);exit;
@@ -137,6 +150,8 @@ class Register extends CI_Controller {
 	$data_anjing = array(
 			'kode_anjing' => $this->input->post('kode_anjing'),
 			'nama_anjing' => $this->input->post('nama_anjing'),
+			'jenis_anjing' => $this->input->post('jenis_anjing'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'id_user' => $id
 			);
 //print_r($data_user);exit;

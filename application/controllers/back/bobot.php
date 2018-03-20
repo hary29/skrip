@@ -6,6 +6,7 @@ class Bobot extends CI_Controller {
 		$this->load->library('session');
 		$this->simple_login->cek_login();
 		$this->load->model('m_bobot');
+		$this->load->model('M_tmp_bobot');
 		$this->load->helper('form');
 		$this->load->helper('url');
 	}
@@ -69,9 +70,19 @@ class Bobot extends CI_Controller {
 			'id_gejala' => $this->input->post('id_gejala'),
 			'bobot' => $this->input->post('bobot')
 			);
+
+			//print_r($data_bobot);exit;
+			//cek kesamaan data jika sama maka tidak di simpan
+			$cek= $this->m_bobot->get_cari_sama($data_bobot);
+			//print_r($cek);exit;
+			if ($cek==0) {
 		$this->m_bobot->tambah($data_bobot);
 		$this->session->set_flashdata("pesan", "<div class=\"alert alert-success\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"></i> Berhasil menambah data</div>");
-		redirect('back/bobot');
+		redirect('back/bobot');}
+		else {
+			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> data sudah ada</div>");
+			redirect('back/bobot/tambah');
+		}
 	}
 
 	// Menampilkan halaman edit

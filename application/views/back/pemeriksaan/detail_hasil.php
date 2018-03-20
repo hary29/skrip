@@ -31,9 +31,19 @@
                                       <th><?php echo $row->nama; ?></th>
                                     </tr>
                                     <tr>
-                                      <td>Jenis Anjing</td>
+                                      <td>Nama Anjing</td>
                                       <td>:</td>
                                       <th><?php echo $row->nama_anjing; ?></th>
+                                    </tr>
+                                     <tr>
+                                      <td>Jenis Anjing</td>
+                                      <td>:</td>
+                                      <th><?php echo $row->jenis_anjing; ?></th>
+                                    </tr>
+                                     <tr>
+                                      <td>Usia Anjing</td>
+                                      <td>:</td>
+                                      <th><?php echo $row->usia; ?></th>
                                     </tr>
                                     <tr>
                                       <td>Penyakit</td>

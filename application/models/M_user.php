@@ -123,7 +123,7 @@ class M_user extends CI_Model {
     $this->db->select('*');
     $this->db->where('username', $data_cari['username']);
     $query = $this->db->get('tb_user'); 
-    	return $query->result();
+    	return $query->num_rows();
 	}
 	public function get_user()
 	{

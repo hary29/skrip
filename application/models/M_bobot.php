@@ -90,4 +90,13 @@ class M_bobot extends CI_Model {
     return $query->result_array();
   }
 
+  public function get_cari_sama($data_bobot) {
+   		$this->db->select('*');
+    	$this->db->from('tb_bobot');
+      	$this->db->where('id_penyakit', $data_bobot['id_penyakit']);
+      	$this->db->where('id_gejala', $data_bobot['id_gejala']);
+      $query = $this->db->get();
+    	return $query->num_rows();
+	}
+
 }

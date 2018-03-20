@@ -200,6 +200,23 @@ class M_pemeriksaan extends CI_Model{
      
 
   }
+  function diagnosa_v1($id)
+  {
+   $this->db->select('*');
+     $this->db->from('tb_diagnosa','tb_user','tb_penyakit','tb_bayes','tb_anjing');
+     $this->db->join('tb_user', 'tb_diagnosa.id_user = tb_user.id_user','Left');
+     $this->db->join('tb_penyakit', 'tb_diagnosa.id_penyakit = tb_penyakit.id_penyakit','Left');
+     $this->db->join('tb_bayes', 'tb_diagnosa.id_bayes = tb_bayes.id_bayes','Left');
+     $this->db->join('tb_anjing', 'tb_diagnosa.id_anjing = tb_anjing.id_anjing','Left');
+     $this->db->where('tb_diagnosa.id_diagnosa',$id);
+     $query = $this->db->get();
+
+      if($query->num_rows() > 0) {
+        $results = $query->result_array();
+     return $results;}
+     
+
+  }
    public function pemeriksaan_v($id)
   {
     $this->db->select('tb_gejala.gejala');
@@ -223,7 +240,7 @@ class M_pemeriksaan extends CI_Model{
      $this->db->join('tb_penyakit', 'tb_diagnosa.id_penyakit = tb_penyakit.id_penyakit','Left');
      $this->db->join('tb_bayes', 'tb_diagnosa.id_bayes = tb_bayes.id_bayes','Left');
      $this->db->join('tb_anjing', 'tb_diagnosa.id_anjing = tb_anjing.id_anjing','Left');
-     $this->db->order_by('id_diagnosa','asc');
+     $this->db->order_by('id_diagnosa','desc');
      $query = $this->db->get('',$num,$offset);
     return $query->result_array();
   }
@@ -332,6 +349,17 @@ class M_pemeriksaan extends CI_Model{
      $this->db->where('tb_diagnosa.id_user',$id);
      $query = $this->db->get();
      return $query->result_array();
+  }
+  public function get_date1($id) {
+    $this->db->select('*');
+    $this->db->where('id_diagnosa', $id);
+    //$this->db->get();
+    $query = $this->db->get('tb_diagnosa'); //simpan database yang udah di get alias ambil ke query
+      return $query->result_array();
+  }
+  public function edit_usia($data_usia) {
+    $this->db->where('id_diagnosa', $data_usia['id_diagnosa']);
+    $this->db->update('tb_diagnosa', $data_usia);
   }
 
 }

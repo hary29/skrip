@@ -9,14 +9,22 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href=""  class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Refresh</a>
                         <ol class="breadcrumb">
                             <li><a href="<?php echo base_url() ?>front/Log/logout">Hospital</a></li>
-                            <li class="active">Tambah Penyakit</li>
+                            <li class="active">Tambah Bobot</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+                  <?php 
+  if ($this->session->flashdata('sukses')) {
+    echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
+  }
+  echo validation_errors('<p class="warning" style="margin: 10px 20px;">','</p>');
+   ?>
                 <?php $id=$this->session->userdata('id');?>
                 
                 <div class="container">
+                  <div align="right">
+                  <a href="<?php echo base_url(); ?>back/tmp_bobot" label class="btn btn-info">Tambah Data Banyak</a><br><br></div>
                   <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="white-box">
