@@ -8,6 +8,7 @@ class User extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('M_user');
+		$this->load->model('m_hasil_angket');
 	}
 
 
@@ -31,23 +32,45 @@ class User extends CI_Controller {
 		$data_cari= $this->session->userdata('username'); 
 		$data['data_user'] = $this->M_user->get_cari_username($data_cari);
 		//print_r($data);exit;
+		
+		$id= $this->session->userdata('id'); 
+		$cek=$this->m_hasil_angket->cek_hasil($id);
+		//print_r($cek);exit();
+		if ($cek == 0) {
 		$this->load->view('layout/back/header');
+		//$this->load->view('layout/back/sidebar');
+		$this->load->view('back/user/user_profile',$data);
+		$this->load->view('layout/back/footer');
+		}
+		else {
+			$this->load->view('layout/back/header');
 		$this->load->view('layout/back/sidebar');
 		$this->load->view('back/user/user_profile',$data);
 		$this->load->view('layout/back/footer');
+		}
 	}
 	public function edit() {	
 
 		 $id= $this->session->userdata('id'); 
          $data['data_user'] = $this->M_user->get_id($id);
          $data['data_level'] = $this->M_user->get_level();
-
-        $this->load->view('layout/back/header');
+         $id= $this->session->userdata('id'); 
+		$cek=$this->m_hasil_angket->cek_hasil($id);
+		//print_r($cek);exit();
+		if ($cek == 0) {
+		$this->load->view('layout/back/header');
+		//$this->load->view('layout/back/sidebar');
+		 $this->load->view('back/user/edit_user',$data);
+		$this->load->view('layout/back/footer');
+		}
+		else {
+			$this->load->view('layout/back/header');
 		$this->load->view('layout/back/sidebar');
-        $this->load->view('back/user/edit_user',$data);
-       	$this->load->view('layout/back/footer');
-		
-        }
+		 $this->load->view('back/user/edit_user',$data);
+		$this->load->view('layout/back/footer');
+		}
+
+     }
         public function edit_aksi()
 	{
 		//print_r($_POST);exit;

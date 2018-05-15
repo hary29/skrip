@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Anjing extends CI_Controller {
+class Skala extends CI_Controller {
 	public function __construct()	{
 		parent::__construct();
 		$this->load->library('session');
@@ -8,7 +8,7 @@ class Anjing extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('M_user');
-		$this->load->model('M_anjing');
+		$this->load->model('M_skala');
 	}
 
 
@@ -29,10 +29,10 @@ class Anjing extends CI_Controller {
 	 */
 	public function index($offset=0)
 	{
-		$jml = $this->db->get('tb_anjing');
+		$jml = $this->db->get('skala');
 
 			//pengaturan pagination
-			 $config['base_url'] = base_url().'back/anjing/index';
+			 $config['base_url'] = base_url().'back/skala/index';
 			 $config['total_rows'] = $jml->num_rows();
 			 $config['per_page'] = '5';
 			 $config['first_page'] = 'Awal';
@@ -66,70 +66,49 @@ class Anjing extends CI_Controller {
 			//tamplikan data
 			 
 			$data['offset'] = $offset;
-			$data['data_anjing'] = $this->M_anjing->daftar_anjing($config['per_page'], $offset);
+			$data['data_skala'] = $this->M_skala->daftar_skala($config['per_page'], $offset);
 
 			//print_r($data);exit;
 			$this->load->view('layout/back/header');
 			$this->load->view('layout/back/sidebar');
-			$this->load->view('back/anjing/semua_anjing',$data);
+			$this->load->view('back/skala/semua_skala',$data);
 			$this->load->view('layout/back/footer');
 	}
 	public function edit($id) {	
 
-         $data['data_user'] = $this->M_user->get_user();
-         $data['data_anjing'] = $this->M_anjing->get_cari_anjing($id);
+         //$data['data_user'] = $this->M_user->get_user();
+         $data['data_skala'] = $this->M_skala->get_cari_skala($id);
+         //print_r($data);exit;
 
         $this->load->view('layout/back/header');
 		$this->load->view('layout/back/sidebar');
-        $this->load->view('back/anjing/edit_anjing',$data);
+        $this->load->view('back/skala/edit_skala',$data);
        	$this->load->view('layout/back/footer');
 		
         }
     public function edit_aksi()
 	{
 		//print_r($_POST);exit;
-		$level= $this->session->userdata('level'); 
-                                if($level==1){
-		$this->form_validation->set_rules('id_user','id_user','required');
-		$this->form_validation->set_rules('id_anjing','id_anjing','required');
+		$this->form_validation->set_rules('id_skala','id_skala','required');
+		//$this->form_validation->set_rules('id_anjing','id_anjing','required');
 		if($this->form_validation->run() == false){
 			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> Gagal mengedit data</div>");
-	redirect('back/anjing');
+	redirect('back/skala');
 		}else{
-	$data_anjing = array(
-			'id_anjing' => $this->input->post('id_anjing'),
-			'kode_anjing' => $this->input->post('kode_anjing'),
-			'nama_anjing' => $this->input->post('nama_anjing'),
-			'id_user' => $this->input->post('id_user')
+	$data_skala = array(
+			'id_skala' => $this->input->post('id_anjing'),
+			'nama_skala' => $this->input->post('kode_anjing'),
+			'bobot_skala' => $this->input->post('nama_anjing')
 			);
 //print_r($data_user);exit;
-	$this->M_anjing->edit($data_anjing);
+	$this->M_skala->edit($data_skala);
 	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Edit Data Anjing Berhasil</div>");
-	redirect('back/anjing');}}
-	else {
-		//$this->form_validation->set_rules('id_user','id_user','required');
-		$this->form_validation->set_rules('id_anjing','id_anjing','required');
-		if($this->form_validation->run() == false){
-			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> Gagal mengedit data</div>");
-	redirect('back/anjing/anjing_user');
-		}else{
-			$id= $this->session->userdata('id'); 
-	$data_anjing = array(
-			'id_anjing' => $this->input->post('id_anjing'),
-			'kode_anjing' => $this->input->post('kode_anjing'),
-			'nama_anjing' => $this->input->post('nama_anjing'),
-			'id_user' => $id
-			);
-//print_r($data_user);exit;
-	$this->M_anjing->edit($data_anjing);
-	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Edit User Berhasil</div>");
-	redirect('back/anjing/anjing_user');}
-	}
-	}
+	redirect('back/skala');}}
+	
 	public function anjing_user()
 	{
 			$id= $this->session->userdata('id'); 
-			$data['data_anjing'] = $this->M_anjing->daftar_anjing_user($id);
+			$data['data_anjing'] = $this->M_skala->daftar_anjing_user($id);
 			//print_r($data);exit;
 			if ($data['data_anjing'] == ''){
 			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"></i><strong>error!</strong><br></i> tidak ada data anjing</div>");
@@ -142,11 +121,11 @@ class Anjing extends CI_Controller {
 	public function delete($id) {
 		$level= $this->session->userdata('level'); 
                                 if($level==1){
-		$this->M_anjing->delete($id);
+		$this->M_skala->delete($id);
 		$this->session->set_flashdata("pesan", "<div class=\"alert alert-success\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"></i> Data berhasil dihapus</div>");
 		redirect('back/anjing/anjing_user');
 	}else {
-		$this->M_anjing->delete($id);
+		$this->M_skala->delete($id);
 		$this->session->set_flashdata("pesan", "<div class=\"alert alert-success\" id=\"alert\"><i class=\"glyphicon glyphicon-ok\"></i> Data berhasil dihapus</div>");
 		redirect('back/anjing/anjing_user');
 	}

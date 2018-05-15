@@ -8,6 +8,15 @@
                     <div class="clearfix"> </div> 
        </div>
   </div>
+  
+  <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="<?php echo base_url() ?>asset/back/css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="<?php echo base_url() ?>asset/back/css/style.min.css" rel="stylesheet">
+                              
+    <!-- color CSS -->
+    <link href="<?php echo base_url() ?>asset/back/css/colors/megna.css" id="theme" rel="stylesheet">
 <div class="header-banner">
 	<?php 
   if ($this->session->flashdata('sukses')) {

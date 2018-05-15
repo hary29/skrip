@@ -47,6 +47,11 @@
                                 <hr>
                                 <!-- .row -->
                                  <div class="row text-center m-t-10">
+                                    <div class="col-md-12"><strong>NIS</strong>
+                                        <p><?php echo $list['NIS']; ?></p>
+                                    </div>
+                                </div>
+                                 <div class="row text-center m-t-10">
                                     <div class="col-md-12"><strong>Jenis Kelamin</strong>
                                         <p><?php $list['jenis_kelamin'];
                                         if ($list['jenis_kelamin']=="L") {
@@ -58,8 +63,8 @@
                                     </div>
                                 </div>
                                 <div class="row text-center m-t-10">
-                                    <div class="col-md-12"><strong>Alamat</strong>
-                                        <p><?php echo $list['alamat']; ?></p>
+                                    <div class="col-md-12"><strong>E-mail</strong>
+                                        <p><?php echo $list['email']; ?></p>
                                     </div>
                                 </div>
                                 <hr>

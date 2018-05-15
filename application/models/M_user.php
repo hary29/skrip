@@ -22,7 +22,7 @@ class M_user extends CI_Model {
 
 		$this->db->select('*');
     	$this->db->join('tb_level', 'tb_user.id_level = tb_level.id_level','Left');
-    	$this->db->order_by('id_user','asc');
+    	$this->db->order_by('tb_level.level','asc');
     	//$this->db->where('');
     	$query = $this->db->get('tb_user',$num, $offset);
     	if($query->num_rows() > 0) {

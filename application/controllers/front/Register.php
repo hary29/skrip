@@ -30,16 +30,16 @@ public function __construct()	{
 		 $kode = $this->M_user->get_last_id();
 		// print_r($kode);exit;
         if ($kode) {
-            $cut_code = substr($kode->kode_pendaftaran, 3, 4);
+            $cut_code = substr($kode->kode_pendaftaran, 2, 4);
             
             $k = $cut_code+1;//print_r($k);exit;
             if ($k == 1) {
-                $kode1 = "PD-1001";
+                $kode1 = "R-1001";
             }else{
-                $kode1 = "PD-".$k;
+                $kode1 = "R-".$k;
             }
         }else{
-            $kode1 = "PD-1001";
+            $kode1 = "R-1001";
         }
         $data['kode'] = $kode1;
 		//$this->load->view('welcome_message');
@@ -54,8 +54,10 @@ public function __construct()	{
 		$this->form_validation->set_rules('username','username','required');
 		$this->form_validation->set_rules('password','password','required');
 		$this->form_validation->set_rules('jenis_kelamin','jenis_kelamin','required');
+		$this->form_validation->set_rules('nis','nis','required|integer');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		if($this->form_validation->run() == false){
-			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> Registrasi Gagal, Silahkan masukkan jenis kelamin username dan password</div>");
+			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> Registrasi Gagal, Silahkan masukkan nis, jenis kelamin, email, username dan password</div>");
 	redirect('front/register');
 		}else{
 			$data_cari = array(
@@ -70,7 +72,8 @@ if ($cek > 0){
 			'kode_pendaftaran' => $this->input->post('kode_pendaftaran'),
 			'id_level' => '2',
 			'nama' => $this->input->post('nama'),
-			'alamat' => $this->input->post('alamat'),
+			'nis' => $this->input->post('nis'),
+			'email' => $this->input->post('email'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 			'username' => $this->input->post('username'),
 			'password' => md5($this->input->post('password')),

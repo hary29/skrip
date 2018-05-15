@@ -10,9 +10,11 @@
                     <div class="clearfix"> </div>	
 		   </div>
   </div>
+  
 
 <!--/header-->
 <!--about-->
+
 <div class="about">
 	 <?php 
   if ($this->session->flashdata('sukses')) {

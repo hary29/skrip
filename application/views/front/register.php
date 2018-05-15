@@ -22,6 +22,7 @@
     <!-- color CSS -->
     <link href="<?php echo base_url() ?>asset/back/css/colors/megna.css" id="theme" rel="stylesheet">
     <div class="about">
+      
   <div class="container">
         <div class="about-top">
           <?php 
@@ -48,6 +49,13 @@
                                         <small><?php echo form_error('kode') ?></small>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                            <label for="exampleInputuname">NIS</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="nis" id="nis" placeholder="NIS">
+                                                <div class="input-group-addon"><i class="ti-user"></i></div>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label for="exampleInputuname">Nama</label>
                                             <div class="input-group">
@@ -56,9 +64,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="alamat">Alamat</label>
+                                            <label for="alamat">Email</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Enter alamat">
+                                                <input type="text" class="form-control" name="email" id="email" placeholder="E mail">
                                                 <div class="input-group-addon"><i class="ti-home"></i></div>
                                             </div>
                                         </div>

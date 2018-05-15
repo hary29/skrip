@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>asset/back/plugins/images/favicon.png">
-    <title>Elite Hospital Admin Template - Hospital admin dashboard web app kit</title>
+    <title>E-media pembelajaran</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() ?>asset/back/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>asset/back/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="<?php echo base_url() ?>back/home_back"><b><img src="<?php echo base_url() ?>asset/back/plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><strong>Sipakar</strong>Anjing</span></a></div>
+                <div class="top-left-part"><a class="logo" href="<?php echo base_url() ?>back/home_back"><b><img src="<?php echo base_url() ?>asset/back/plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><strong>Media</strong>Belajar</span></a></div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
                     <li>

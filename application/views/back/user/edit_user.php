@@ -50,6 +50,13 @@
                                         <small><?php echo form_error('kode') ?></small>
                                     </div>
                                 </div>
+                                 <div class="form-group">
+                                            <label for="exampleInputuname">NIS</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="nis" id="nis" placeholder="NIS" value="<?php echo $list['NIS']; ?>">
+                                                <div class="input-group-addon"><i class="ti-user"></i></div>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label for="exampleInputuname">Nama</label>
                                             <div class="input-group">
@@ -57,10 +64,10 @@
                                                 <div class="input-group-addon"><i class="ti-user"></i></div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="alamat">Alamat</label>
+                                       <div class="form-group">
+                                            <label for="alamat">Email</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Enter alamat" value="<?php echo $list['alamat']; ?>">
+                                                <input type="text" class="form-control" name="email" id="email" placeholder="E mail" value="<?php echo $list['email']; ?>">
                                                 <div class="input-group-addon"><i class="ti-home"></i></div>
                                             </div>
                                         </div>

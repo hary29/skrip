@@ -56,16 +56,16 @@ class Register extends CI_Controller {
 		 $kode = $this->M_user->get_last_id();
 		// print_r($kode);exit;
         if ($kode) {
-            $cut_code = substr($kode->kode_pendaftaran, 3, 4);
+            $cut_code = substr($kode->kode_pendaftaran, 2, 4);
             
             $k = $cut_code+1;//print_r($k);exit;
             if ($k == 1) {
-                $kode1 = "PD-1001";
+                $kode1 = "R-1001";
             }else{
-                $kode1 = "PD-".$k;
+                $kode1 = "R-".$k;
             }
         }else{
-            $kode1 = "PD-1001";
+            $kode1 = "R-1001";
         }
         $data['kode'] = $kode1;
         $data['data_level'] = $this->M_user->get_level();
@@ -75,96 +75,14 @@ class Register extends CI_Controller {
 		$this->load->view('layout/back/footer');
 	}
 
-	public function tambah_anjing()
-	{
-		//print_r($_POST);exit;
-		$level= $this->session->userdata('level'); 
-                                if($level==1){
-		$this->form_validation->set_rules('id_user','id_user','required');
-		$this->form_validation->set_rules('tanggal_lahir','tanggal_lahir','required');
-		if($this->form_validation->run() == false){
-			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih user dan inputkan tanggal lahir</div>");
-	redirect('back/register');
-		}else{
-	$data_anjing = array(
-			'kode_anjing' => $this->input->post('kode_anjing'),
-			'nama_anjing' => $this->input->post('nama_anjing'),
-			'jenis_anjing' => $this->input->post('jenis_anjing'),
-			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-			'id_user' => $this->input->post('id_user')
-			);
-//print_r($data_user);exit;
-	$this->M_anjing->tambah($data_anjing);
-	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Registrasi data anjing berhasil</div>");
-	redirect('back/register');}}
-	
-	else {
-		
-			$id= $this->session->userdata('id'); 
-			$this->form_validation->set_rules('tanggal_lahir','tanggal_lahir','required');
-		if($this->form_validation->run() == false){
-			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih user dan inputkan tanggal lahir</div>");
-	redirect('back/register');
-		}else {
-			//print_r($_POST);exit;
-		
-	$data_anjing = array(
-			'kode_anjing' => $this->input->post('kode_anjing'),
-			'nama_anjing' => $this->input->post('nama_anjing'),
-			'jenis_anjing' => $this->input->post('jenis_anjing'),
-			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-			'id_user' => $id
-			);
-//print_r($data_user);exit;
-	$this->M_anjing->tambah($data_anjing);
-	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Registrasi data anjing berhasil</div>");
-	redirect('back/register');}}
-	}
-
-	public function tambah_anjing_pemeriksaan()
-	{
-		//print_r($_POST);exit;
-		$level= $this->session->userdata('level'); 
-                                if($level==1){
-		$this->form_validation->set_rules('id_user','id_user','required');
-		if($this->form_validation->run() == false){
-			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> silahkan pilih user</div>");
-	redirect('back/pemeriksaan');
-		}else{
-	$data_anjing = array(
-			'kode_anjing' => $this->input->post('kode_anjing'),
-			'nama_anjing' => $this->input->post('nama_anjing'),
-			'jenis_anjing' => $this->input->post('jenis_anjing'),
-			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-			'id_user' => $this->input->post('id_user')
-			);
-//print_r($data_user);exit;
-	$this->M_anjing->tambah($data_anjing);
-	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Registrasi data anjing berhasil</div>");
-	redirect('back/pemeriksaan');}}
-	
-	else {
-		
-			$id= $this->session->userdata('id'); 
-			//print_r($_POST);exit;
-	$data_anjing = array(
-			'kode_anjing' => $this->input->post('kode_anjing'),
-			'nama_anjing' => $this->input->post('nama_anjing'),
-			'jenis_anjing' => $this->input->post('jenis_anjing'),
-			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-			'id_user' => $id
-			);
-//print_r($data_user);exit;
-	$this->M_anjing->tambah($data_anjing);
-	$this->session->set_flashdata('sukses', "<div class=\"alert alert-success\" id=\"alert\"><i class=\"\"></i> Registrasi data anjing berhasil</div>");
-	redirect('back/pemeriksaan');}
-	}
 	public function tambah_user()
 	{
 		//print_r($_POST);exit;
 		$this->form_validation->set_rules('username','username','required');
 		$this->form_validation->set_rules('password','password','required');
 		$this->form_validation->set_rules('jenis_kelamin','jenis_kelamin','required');
+		$this->form_validation->set_rules('nis','nis','required|integer');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		if($this->form_validation->run() == false){
 			$this->session->set_flashdata('sukses', "<div class=\"alert alert-danger\" id=\"alert\"><i class=\"\"><strong>error!</strong><br></i> Registrasi Gagal, Silahkan masukkan jenis kelamin username dan password</div>");
 	redirect('back/register/register_user');
@@ -179,12 +97,13 @@ if ($cek > 0){
 		}else{
 	$data_user = array(
 			'kode_pendaftaran' => $this->input->post('kode_pendaftaran'),
+			'id_level' => '2',
 			'nama' => $this->input->post('nama'),
-			'alamat' => $this->input->post('alamat'),
+			'nis' => $this->input->post('nis'),
+			'email' => $this->input->post('email'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 			'username' => $this->input->post('username'),
 			'password' => md5($this->input->post('password')),
-			'id_level' => $this->input->post('id_level')
 			);
 //print_r($data_user);exit;
 	$this->M_user->tambah($data_user);

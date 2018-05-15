@@ -31,8 +31,9 @@
                                           <th >No</th>
                                           <th >Kode Pendaftaran</th>
                                           <th >Nama</th>
-                                          <th >Alamat</th>
+                                          <th >NIS</th>
                                           <th >Jenis Kelamin</th>
+                                          <th >e-mail</th>
                                           <th >Username</th>
                                           <th >Password</th>
                                           <th >Level</th>
@@ -48,8 +49,9 @@
                             <td><?php echo ++$no ?></a></td>
                             <td><?php echo $list['kode_pendaftaran']; ?></td>
                             <td><?php echo $list['nama']; ?></td>
-                            <td><?php echo $list['alamat']; ?></td>
+                            <td><?php echo $list['NIS']; ?></td>
                             <td><?php echo $list['jenis_kelamin']; ?></td>
+                            <td><?php echo $list['email']; ?></td>
                             <td><?php echo $list['username']; ?></td>
                             <td><?php echo $list['password']; ?></td>
                             <td><?php echo $list['level']; ?></td>
